@@ -1,11 +1,12 @@
 const express = require("express");
 const chalk = require("chalk");
 const { default: axios } = require("axios");
+const cors = require("cors");
 
 const app = express();
 const port = 5001;
 app.use(express.json());
-
+app.use(cors());
 app.get("/", (req, res) => {
   res.status(200).send("response from server");
 });
