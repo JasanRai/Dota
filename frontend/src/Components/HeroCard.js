@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import {
-  CardMedia,
+  CardMedia, 
   Card,
   CardHeader,
   CardContent,
@@ -13,11 +13,18 @@ import {
 export default function HeroCard(props) {
   const { heroName, heroImgUrl, primaryAttribute, roles } = props;
   return (
-    <Card style={{ width: 300, height: 400, marginTop: 30 }}>
+    <Card
+      style={{
+        width: 300,
+        height: 420,
+        marginTop: 30,
+        background: "rgba(200, 155, 123, 0.9)",
+      }}
+    >
       <CardHeader
         style={{ background: "#3a393a", borderBottom: "1px solid #292929" }}
         title={
-          <Typography align='center' style={{ color: "#fff" }}>
+          <Typography align="center" style={{ color: "#fff" }}>
             {heroName}
           </Typography>
         }
@@ -25,27 +32,58 @@ export default function HeroCard(props) {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Box style={{ marginTop: 25 }}>
           <img
-            style={{ width: 230, borderRadius: 3 }}
+            style={{ width: "100%", borderRadius: 3 }}
             src={heroImgUrl}
-            alt='hero'
+            alt="hero"
           />
         </Box>
       </div>
 
-      <CardContent style={{}}>
-        <Grid container>
-          <Grid item xs={6}>
-            <Typography>Attribute: </Typography>
-          </Grid>
-          <Grid item xs={6}>
-            <Typography> {primaryAttribute}</Typography>
-          </Grid>
-        </Grid>
+      <CardContent style={{ margin: 0 }}>
+        <Typography
+          style={{
+            color: "#fff",
+            fontFamily: "initial",
+            fontWeight: "bold",
+            textDecoration: "underline",
+
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          Attribute
+        </Typography>
+        <Typography
+          style={{
+            fontFamily: "cursive",
+            color: "#fff",
+            fontWeight: "bold",
+            textTransform: "capitalize",
+
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          {" "}
+          {primaryAttribute}
+        </Typography>
+
+        <Typography
+          style={{
+            color: "#fff",
+            fontFamily: "initial",
+            fontWeight: "bold",
+            textDecoration: "underline",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          Roles:{" "}
+        </Typography>
 
         <Grid
           container
           style={{
-            border: "1px solid",
             display: "flex",
             justifyContent: "center",
           }}
@@ -56,28 +94,38 @@ export default function HeroCard(props) {
                 return (
                   <Grid
                     style={{
-                      border: "1px solid",
+                      border: "2px solid",
+                      borderRadius: 6,
+                      borderColor: "#000",
+                      marginTop: 2,
                       display: "flex",
                       justifyContent: "center",
+                      fontFamily: "monospace",
+                      fontWeight: "bold",
                     }}
                     item
                     xs={6}
                   >
-                    {role}
+                    <Typography style={{ color: "#fff" }}>{role}</Typography>
                   </Grid>
                 );
               } else {
                 return (
                   <Grid
                     style={{
-                      border: "1px solid",
+                      border: "2px solid",
+                      borderRadius: 6,
+                      borderColor: "#000",
                       display: "flex",
                       justifyContent: "center",
+                      fontFamily: "monospace",
+                      fontWeight: "bold",
+                      marginTop: 2,
                     }}
                     item
                     xs={12}
                   >
-                    {role}
+                    <Typography style={{ color: "#fff" }}>{role}</Typography>
                   </Grid>
                 );
               }
@@ -85,14 +133,19 @@ export default function HeroCard(props) {
               return (
                 <Grid
                   style={{
-                    border: "1px solid",
+                    border: "2px solid",
+                    borderRadius: 6,
+                    borderColor: "#000",
                     display: "flex",
                     justifyContent: "center",
+                    fontFamily: "monospace",
+                    fontWeight: "bold",
+                    marginTop: 2,
                   }}
                   item
                   xs={6}
                 >
-                  {role}
+                  <Typography style={{ color: "#fff" }}>{role}</Typography>
                 </Grid>
               );
             }
